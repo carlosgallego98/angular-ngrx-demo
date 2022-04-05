@@ -1,0 +1,35 @@
+<p-card>
+  <h2>Iniciar Sesión</h2>
+  <form [formGroup]="loginForm" (submit)="onLogin()">
+    <div class="py-1">
+      <input
+        class="w-full"
+        type="email"
+        formControlName="email"
+        placeholder="Correo"
+        pInputText
+      />
+    </div>
+    <div class="py-1">
+      <input
+        class="w-full"
+        type="password"
+        formControlName="password"
+        placeholder="Contraseña"
+        pInputText
+      />
+    </div>
+    <div class="my-2" *ngIf="this.error$ | async as error">
+      <p>{{ error }}</p>
+    </div>
+    <div class="mt-3">
+      <button
+        class="w-full"
+        [loading]="(isLoading$ | async) ?? false"
+        pButton
+        type="submit"
+        label="Iniciar Sesión"
+      ></button>
+    </div>
+  </form>
+</p-card>

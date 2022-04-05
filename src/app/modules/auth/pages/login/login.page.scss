@@ -1,0 +1,10 @@
+:host {
+  display: grid;
+  place-items: center;
+  height: 100vh;
+}
+
+p-card {
+  max-width: 450px;
+  width: 100%;
+}

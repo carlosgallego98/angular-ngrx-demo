@@ -1,0 +1,12 @@
+<p-menubar [model]="items">
+  <button
+    (click)="logOut()"
+    pButton
+    class="p-button-text p-button-sm"
+    icon="pi pi-power-off"
+  ></button>
+</p-menubar>
+
+<div  class="p-4">
+  <ng-content></ng-content>
+</div>

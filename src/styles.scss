@@ -1,0 +1,46 @@
+/* You can add global styles to this file, and also import other style files */
+// *:not(pre) {
+//   font-family: Inter;
+// }
+body {
+  font-family: Inter;
+  background-color: #f8f6f6;
+}
+
+table tr th {
+  font-weight: bold !important;
+}
+
+.status-badge {
+  border-radius: 2px;
+  padding: .25em .5rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: .3px;
+
+  &.status-activo {
+    background: #C8E6C9;
+    color: #256029;
+  }
+
+  &.status-inactivo {
+    background: #FFCDD2;
+    color: #c63737;
+  }
+}
+.p-button-group {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+.p-field {
+  margin-bottom: 1rem;
+  label {
+    display: inline-block;
+    margin-bottom: .5rem;
+  }
+  textarea, input, .p-dropdown {
+    width: 100%;
+  }
+}

@@ -1,0 +1,60 @@
+<form
+  [formGroup]="programasForm"
+  class="flex justify-content-between flex-column h-full"
+  (submit)="onSubmitForm()"
+>
+  <div>
+    <div class="p-field">
+      <label for="nombre">Nombre</label>
+      <input formControlName="nombre" id="nombre" pInputText type="text" />
+    </div>
+    <div class="p-field">
+      <label for="nombre">Descripción</label>
+      <textarea
+        formControlName="descripcion"
+        rows="5"
+        pInputTextarea
+      ></textarea>
+    </div>
+    <div class="p-field">
+      <label>Área</label>
+      <p-dropdown
+        formControlName="area_id"
+        [options]="($areas | async) ?? []"
+        optionLabel="nombre"
+        optionValue="id"
+      ></p-dropdown>
+    </div>
+    <div class="p-field">
+      <label>Estado</label>
+      <p-dropdown
+        formControlName="estado"
+        [options]="estados"
+        optionLabel="nombre"
+        optionValue="id"
+      >
+        <ng-template let-estado pTemplate="selectedItem">
+          <span [class]="'status-badge status-' + estado.nombre">{{
+            estado.nombre
+          }}</span>
+        </ng-template>
+        <ng-template let-estado pTemplate="item">
+          <span [class]="'status-badge status-' + estado.nombre">{{
+            estado.nombre
+          }}</span>
+        </ng-template>
+      </p-dropdown>
+    </div>
+  </div>
+
+  <div class="p-button-group justify-content-end">
+    <button
+      icon="pi pi-times"
+      type="button"
+      class="p-button-text"
+      label="Cancelar"
+      pButton
+    ></button>
+    <button icon="pi pi-save" type="submit" label="Guardar" pButton></button>
+  </div>
+</form>
